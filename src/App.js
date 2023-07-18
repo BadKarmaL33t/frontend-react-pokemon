@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import './App.css';
-import Pokemon from "./components/Pokemon";
+import Pokemon from './components/Pokemon';
+import { pokemonLogo } from './assets/pokemon.png'
 
 // basis endpoint https://pokeapi.co/api/v2/pokemon/ geeft automatisch een array van 20 pokemons.
 // .next en .previous geven de vorige/volgende 20 pokemons.
@@ -34,10 +35,26 @@ function App() {
     }, [endpoint]);
 
     return (
-        <div className="allPokemon">
+        <div className="pokedex">
             {/*Check of de pokemon data is opgehaald*/}
             {pokemons &&
                 <>
+                    <img src={pokemonLogo} alt="Pokemon logo"/>
+                    <button
+                        type="button"
+                        disabled={!pokemons['previous']}
+                        onClick={() => { setEndpoint(pokemons['previous']) }}
+                    >
+                        Vorige
+                    </button>
+                    <button
+                        type="button"
+                        disabled={!pokemons['next']}
+                        onClick={() => { setEndpoint(pokemons['next']) }}
+                    >
+                        Volgende
+                    </button>
+
                     {/*Check of de data results bevat (hierin zitten de gegevens per pokemon.) */}
                     {/*Map daarna door de lijst met pokemons en return een pokemon voor elke i.*/}
                     {/*Geef voor elke i een component Pokemon terug met unieke key pokemon.name vanaf het endpoint van deze pokemon.*/}
