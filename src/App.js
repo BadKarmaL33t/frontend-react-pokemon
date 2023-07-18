@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import './App.css';
 import Pokemon from './components/Pokemon';
-import { pokemonLogo } from './assets/pokemon.png'
+import pokemonLogo from './assets/pokemonLogo.png'
 
 // basis endpoint https://pokeapi.co/api/v2/pokemon/ geeft automatisch een array van 20 pokemons.
 // .next en .previous geven de vorige/volgende 20 pokemons.
