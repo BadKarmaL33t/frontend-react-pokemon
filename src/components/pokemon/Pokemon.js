@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import axios from 'axios';
+import './Pokemon.css'
 
 function Pokemon({endpoint}) {
     const [pokemon, setPokemon] = useState("");
@@ -25,9 +26,9 @@ function Pokemon({endpoint}) {
                     <img src={pokemon['sprites']['front_default']}
                          alt="pokemon img"
                     />
-                    <h4>Moves: {pokemon['moves'].length}</h4>
-                    <h4>Weight: {pokemon['weight']}</h4>
-                    <h4>Abilities:</h4>
+                    <p><strong>Moves: </strong>{pokemon['moves'].length}</p>
+                    <p><strong>Weight: </strong>{pokemon['weight']}</p>
+                    <p><strong>Abilities:</strong></p>
                     <ul>
                     {pokemon['abilities'].map((ability) => {
                         return (

@@ -1,0 +1,25 @@
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-basis: 200px;
+    background-color: snow;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgb(0 0 0 / 0.25);
+    padding: 24px;
+    margin: 12px;
+}
+
+.pokemon-tile ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+    background-color: lightgray;
+    color: dimgray;
+    border: 3px solid dimgray;
+    border-radius: 4px;
+    width: 180px;
+    margin: 2px 0;
+}
